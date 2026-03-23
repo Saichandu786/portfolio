@@ -16,10 +16,50 @@
 
 <body>
 
+    <!-- Chatbot Widget (Moved to TOP for reliable fixed positioning) -->
+    <div class="chatbot-widget" id="chatbot-widget">
+        <div class="chatbot-window" id="chatbot-window">
+            <div class="chatbot-header">
+                <div class="chatbot-info">
+                    <i class="fas fa-robot"></i>
+                    <span>Sai's Assistant</span>
+                </div>
+                <button class="chatbot-close" id="chatbot-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message bot-message">
+                    Hello! I'm Sai's virtual assistant. How can I help you today?
+                </div>
+                <div class="chat-suggestions">
+                    <button class="suggestion-btn" data-query="skills">Skills</button>
+                    <button class="suggestion-btn" data-query="projects">Projects</button>
+                    <button class="suggestion-btn" data-query="certifications">Certifications</button>
+                    <button class="suggestion-btn" data-query="contact">Contact</button>
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbot-input-field" placeholder="Type a message...">
+                <button id="chatbot-send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        <button class="chatbot-toggle" id="chatbot-toggle">
+            <i class="fas fa-comment-dots"></i>
+        </button>
+    </div>
+
     <!-- Navbar -->
     <header class="navbar">
         <a href="#home" class="logo">KSC.</a>
         <nav class="nav-links">
+            <div class="sidebar-header">
+                <button class="close-btn" id="close-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
             <a href="#home">Home</a>
             <a href="#about">About</a>
             <a href="#Education">Education</a>
@@ -40,7 +80,7 @@
         <div class="hero-container">
             <div class="hero-content">
                 <span class="greeting">Hello, I'm</span>
-                <h1 class="name">Kalakota <span>Sai Chandu</span></h1>
+                <h1 class="name">Kalakota Sai Chandu</h1>
                 <h2 class="role" id="role-container">
                     <span id="typed-role" class="typewriter-text"></span>
                     <span id="typewriter-cursor" class="cursor">|</span>
@@ -48,14 +88,16 @@
                 <p class="bio">AWS | Docker | Kubernetes | Python | C++</p>
                 <div class="hero-btns">
                     <a href="#projects" class="btn primary-btn">View My Work</a>
+                    <a href="resume.pdf" download="Kalakota_Sai_Chandu_Resume.pdf" class="btn primary-btn"><i
+                            class="fas fa-download"></i> Download CV</a>
                     <a href="#contact" class="btn secondary-btn">Contact Me</a>
                 </div>
             </div>
 
             <div class="hero-image">
                 <div class="image-wrapper">
-                    <!-- Replace 'profile.jpg' with the actual path to your image later -->
-                    <img src="profil.jpeg" alt="Kalakota Sai Chandu" id="profil.png">
+                    <!-- Using profile1.jpeg as requested -->
+                    <img src="profilea.jpeg" alt="Kalakota Sai Chandu" id="profile-photo">
                 </div>
             </div>
         </div>
@@ -69,7 +111,8 @@
     <section id="about" class="about section">
         <div class="section-title">
             <h2>About <span>Me</span></h2>
-        </div <div class="about-container fade-in">
+        </div>
+        <div class="about-container fade-in">
         <div class="about-text">
             <p>I am a Computer Science Engineering student at <strong>Lovely Professional University</strong>
                 passionate about Cloud Computing, DevOps, and backend systems.</p>
@@ -79,247 +122,345 @@
             <p>My goal is to become a skilled Cloud/DevOps Engineer and contribute to building reliable and scalable
                 systems.</p>
         </div>
-        <!-- Education Section -->
-        <section id="Education" class="Education section">
-            <div class="section-title">
-                <h2>Education <span></span></h2>
-            </div>
-            <div class="education-card fade-in">
-                <h3><i class="fas fa-graduation-cap"></i> Education</h3>
-                <div class="edu-item">
-                    <div class="edu-header">
-                        <h4>Lovely Professional University</h4>
-                        <span class="edu-location">Phagwara, Punjab</span>
-                    </div>
-                    <div class="edu-details">
-                        <p>Bachelor of Technology<br>Computer Science and Engineering; CGPA: 6.11</p>
-                        <span class="edu-duration">Aug 2023 – Present</span>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <div class="edu-header">
-                        <h4>Krishnaveni junior College</h4>
-                        <span class="edu-location">Khammam, Telangana</span>
-                    </div>
-                    <div class="edu-details">
-                        <p>Intermediate; MPC; Percentage: 84.7</p>
-                        <span class="edu-duration">May 2021 – May 2023</span>
-                    </div>
-                </div>
-                <div class="edu-item">
-                    <div class="edu-header">
-                        <h4>Abhinav High School</h4>
-                        <span class="edu-location">Khammam, Telangana</span>
-                    </div>
-                    <div class="edu-details">
-                        <p>Matriculation; Percentage: 100%</p>
-                        <span class="edu-duration">Mar 2020 – Mar 2021</span>
-                    </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="Education" class="Education section">
+        <div class="section-title">
+            <h2>Education <span></span></h2>
+        </div>
+        <div class="timeline fade-in">
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-graduation-cap"></i></div>
+                <div class="timeline-content">
+                    <h3>Lovely Professional University</h3>
+                    <p><strong>Location:</strong> Phagwara, Punjab</p>
+                    <p><strong>Degree:</strong> Bachelor of Technology in Computer Science and Engineering</p>
+                    <p><strong>CGPA:</strong> 6.11</p>
+                    <p><strong>Duration:</strong> Aug 2023 – Present</p>
                 </div>
             </div>
-            </div>
-        </section>
-
-        <!-- Skills Section -->
-        <section id="skills" class="skills section">
-            <div class="section-title">
-                <h2>Technical <span>Skills</span></h2>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-code"></i> Programming</h3>
-                    <div class="skill-tags">
-                        <span>Python</span><span>C</span><span>C++</span><span>JavaScript</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-cloud"></i> Cloud & DevOps</h3>
-                    <div class="skill-tags">
-                        <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Git</span><span>GitHub</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-database"></i> Web & Database</h3>
-                    <div class="skill-tags">
-                        <span>HTML</span><span>CSS</span><span>MySQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-category fade-in">
-                    <h3><i class="fas fa-server"></i> Core Concepts & OS</h3>
-                    <div class="skill-tags">
-                        <span>Linux</span><span>DSA</span><span>DBMS</span><span>Operating
-                            Systems</span><span>Networking</span><span>OOP</span>
-                    </div>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <div class="timeline-content">
+                    <h3>Krishnaveni Junior College</h3>
+                    <p><strong>Location:</strong> Khammam, Telangana</p>
+                    <p><strong>Qualification:</strong> Intermediate (MPC)</p>
+                    <p><strong>Percentage:</strong> 84.7%</p>
+                    <p><strong>Duration:</strong> May 2021 – May 2023</p>
                 </div>
             </div>
-        </section>
-
-        <!-- Summer Internship / Training Section -->
-        <section id="training" class="training section">
-            <div class="section-title">
-                <h2>Summer <span>Internship / Training</span></h2>
+            <div class="timeline-item">
+                <div class="timeline-icon"><i class="fas fa-school"></i></div>
+                <div class="timeline-content">
+                    <h3>Abhinav High School</h3>
+                    <p><strong>Location:</strong> Khammam, Telangana</p>
+                    <p><strong>Qualification:</strong> Matriculation</p>
+                    <p><strong>Percentage:</strong> 100%</p>
+                    <p><strong>Duration:</strong> Mar 2020 – Mar 2021</p>
+                </div>
             </div>
-            <div class="training-card fade-in">
-                <h3>C++ with Data Structures and Algorithms Training</h3>
-                <span class="training-duration">Jun 2025 – Jul 2025</span>
-                <p>Completed intensive training in C++ and Data Structures focusing on problem solving and algorithm optimization. Implemented major data structures such as arrays, linked lists, stacks, queues, trees, and graphs while building multiple coding projects.</p>
-                <p><strong>Technologies Used:</strong> C++, OOP, Data Structures, Algorithms, VS Code</p>
-                <p><a href="https://drive.google.com/file/d/18Gi8OK0cLcEXoqbmyq0TYXQ-FbZ8REfh/view?usp=sharing" target="_blank" class="cert-link">Cert-view 🔗</a></p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="projects section">
-            <div class="section-title">
-                <h2><span>Projects</span></h2>
+    <!-- Skills Section -->
+    <section id="skills" class="skills section">
+        <div class="section-title">
+            <h2>Technical <span>Skills</span></h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h3>Programming</h3>
+                <div class="skill-tags">
+                    <span>Python</span><span>C</span><span>C++</span><span>JavaScript</span>
+                </div>
             </div>
-            <div class="project-grid">
 
-                <div class="project-card fade-in">
-                    <div class="project-info">
-                        <h3>Serverless File Upload & Processing System</h3>
-                        <p>Built a fully serverless application using AWS S3, Lambda, API Gateway, and DynamoDB. The
-                            system
-                            automatically processes uploaded files, extracts metadata, and stores structured records.
-                            Implemented event-driven architecture and IAM policies for secure access.</p>
-                        <div class="tech-stack">
-                            <span>AWS Lambda</span><span>S3</span><span>API Gateway</span><span>DynamoDB</span>
+            <div class="skill-category fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud & DevOps</h3>
+                <div class="skill-tags">
+                    <span>AWS</span><span>Docker</span><span>Kubernetes</span><span>Git</span><span>GitHub</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-database"></i>
+                </div>
+                <h3>Web & Database</h3>
+                <div class="skill-tags">
+                    <span>HTML</span><span>CSS</span><span>MySQL</span>
+                </div>
+            </div>
+
+            <div class="skill-category fade-in">
+                <div class="skill-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <h3>Core Concepts & OS</h3>
+                <div class="skill-tags">
+                    <span>Linux</span><span>DSA</span><span>DBMS</span><span>Operating Systems</span><span>Networking</span><span>OOP</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summer Internship / Training Section -->
+    <section id="training" class="training section">
+        <div class="section-title">
+            <h2>Summer <span>Internship / Training</span></h2>
+        </div>
+        <div class="training-card fade-in">
+            <h3>C++ with Data Structures and Algorithms Training</h3>
+            <span class="training-duration">June 2025 – July 2025</span>
+            <p>During my summer training, I implemented core data structures such as arrays, linked lists, stacks, queues, trees, graphs, and hash tables using C++. I also developed efficient algorithms including sorting and searching techniques, with focus on time and space complexity. Additionally, I built mini-projects applying object-oriented programming concepts to solve real-world problems.</p>
+            <ul class="training-achievements">
+                <li>Implemented arrays, linked lists, stacks, queues, trees, graphs, and hash tables in C++</li>
+                <li>Developed sorting and searching algorithms with complexity analysis</li>
+                <li>Built mini-projects applying OOP and data structures to real-world problems</li>
+            </ul>
+            <p><strong>Technologies Used:</strong> C++, OOP, Data Structures, Algorithms, VS Code</p>
+            <p><a href="https://drive.google.com/file/d/18Gi8OK0cLcEXoqbmyq0TYXQ-FbZ8REfh/view?usp=sharing"
+                    target="_blank" class="cert-link">Cert-view 🔗</a></p>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects section">
+        <div class="section-title">
+            <h2><span>Projects</span></h2>
+        </div>
+        <div class="project-grid">
+
+            <div class="project-card fade-in">
+                <img src="serverless file upload.png" alt="Serverless Architecture Sketch" class="project-sketch">
+                <div class="project-info">
+                    <h3>Serverless File Upload & Processing System</h3>
+                    <p>Built a fully serverless application using AWS S3, Lambda, API Gateway, and DynamoDB. The
+                        system
+                        automatically processes uploaded files, extracts metadata, and stores structured records.
+                        Implemented event-driven architecture and IAM policies for secure access.</p>
+                    <div class="tech-stack">
+                        <span>AWS Lambda</span><span>S3</span><span>API Gateway</span><span>DynamoDB</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Saichandu786/serverless-file-processing" target="_blank" class="github-link"><i
+                            class="fab fa-github"></i> View Source Code</a>
+                </div>
+            </div>
+
+            <div class="project-card fade-in">
+                <img src="cloud based student record.png" alt="Student Records System Sketch" class="project-sketch">
+                <div class="project-info">
+                    <h3>Cloud-Based Student Record Management System</h3>
+                    <p>Developed and deployed a scalable cloud-based application using AWS EC2 with Application Load
+                        Balancer and Auto Scaling. Implemented RDS MySQL for secure data storage and configured VPC
+                        networking for secure communication.</p>
+                    <div class="tech-stack">
+                        <span>AWS EC2</span><span>RDS</span><span>MySQL</span><span>Load
+                            Balancer</span><span>VPC</span>
+                    </div>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/Saichandu786/cloud_student_record" target="_blank" class="github-link"><i
+                            class="fab fa-github"></i> View Source Code</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="certifications section">
+        <div class="section-title">
+            <h2><span>Certifications</span></h2>
+        </div>
+        <div class="certs-grid">
+            <div class="cert-card fade-in">
+                <div class="cert-image-wrap">
+                    <img class="cert-image" src="oracle certificate.png" alt="Oracle Associate Architect Certification">
+                </div>
+                <div class="cert-info">
+                    <h3>Oracle Associate Architect Certification</h3>
+                    <p>Oracle</p>
+                    <a href="https://drive.google.com/file/d/1r-XNTRXDzEU2M4Lh5h5hpW-pVQx42i7m/view" target="_blank" class="cert-link">View Full Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card fade-in">
+                <div class="cert-image-wrap">
+                    <img class="cert-image" src="devops certificate.png" alt="DevOps Professional Certification">
+                </div>
+                <div class="cert-info">
+                    <h3>DevOps Professional Certification</h3>
+                    <p>Udemy</p>
+                    <a href="https://drive.google.com/file/d/1JW2gP_JPyAwiZiy1UNAlzT7hy_X2C7qq/view" target="_blank" class="cert-link">View Full Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card fade-in">
+                <div class="cert-image-wrap">
+                    <img class="cert-image" src="python certificate.png" alt="Python Programming Certification">
+                </div>
+                <div class="cert-info">
+                    <h3>Python Programming Certification</h3>
+                    <p>Udemy</p>
+                    <a href="https://drive.google.com/file/d/1JW2gP_JPyAwiZiy1UNAlzT7hy_X2C7qq/view" target="_blank" class="cert-link">View Full Certificate</a>
+                </div>
+            </div>
+            <div class="cert-card fade-in">
+                <div class="cert-image-wrap">
+                    <img class="cert-image" src="aws academy.png" alt="AWS Certified Cloud Practitioner">
+                </div>
+                <div class="cert-info">
+                    <h3>AWS Certified Cloud Practitioner</h3>
+                    <p>Amazon Web Services (AWS)</p>
+                    <a href="https://drive.google.com/file/d/1JbvxsRHMxTBqA3J9h80s76t2slWHlsSA/view" target="_blank" rel="noopener noreferrer" class="cert-link">View Full Certificate</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certificate Lightbox Modal -->
+        <div id="cert-modal" class="cert-modal">
+            <span class="cert-modal-close" id="cert-modal-close">&times;</span>
+            <img class="cert-modal-content" id="cert-modal-image" src="" alt="Full certificate view">
+            <div id="cert-modal-caption" class="cert-modal-caption"></div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements section">
+        <div class="section-title">
+            <h2>My <span>Achievements</span></h2>
+        </div>
+        <div class="timeline">
+            <div class="timeline-item fade-in">
+                <div class="timeline-icon"><i class="fas fa-code"></i></div>
+                <div class="timeline-content">
+                    <h3>LeetCode Practice</h3>
+                    <p>Maintained consistent LeetCode practice demonstrating strong problem-solving skills and
+                        mastery
+                        over Data Structures & Algorithms.</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
+                <div class="timeline-content">
+                    <h3>Code of Duty Hackathon</h3>
+                    <p>Successfully participated in the Code of Duty Hackathon, collaborating with teammates to
+                        prototype novel software solutions under pressure.</p>
+                </div>
+            </div>
+            <div class="timeline-item fade-in">
+                <div class="timeline-icon"><i class="fas fa-crown"></i></div>
+                <div class="timeline-content">
+                    <h3>Adobe Hackathon</h3>
+                    <p>Participated in the Adobe Hackathon, gaining valuable experience building enterprise-ready
+                        features and understanding real-time integration workflows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+        <div class="section-title">
+            <h2>Contact <span>Me</span></h2>
+        </div>
+        <div class="contact-grid fade-in">
+            <!-- Contact Info Card -->
+            <div class="contact-info-card">
+                <h3>Let's Connect!</h3>
+                <p>I am actively seeking internship and full-time opportunities where I can leverage my Cloud
+                    architectures and DevOps automation skills. Have a question or proposal? Drop me a line!</p>
+
+                <div class="contact-details">
+                    <div class="contact-detail-item">
+                        <div class="icon-box">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="detail-text">
+                            <span>Phone</span>
+                            <p>+91 9032900350</p>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Saichandu786" target="_blank" class="github-link"><i
-                                class="fab fa-github"></i> View Source Code</a>
-                    </div>
-                </div>
-
-                <div class="project-card fade-in">
-                    <div class="project-info">
-                        <h3>Cloud-Based Student Record Management System</h3>
-                        <p>Developed and deployed a scalable cloud-based application using AWS EC2 with Application Load
-                            Balancer and Auto Scaling. Implemented RDS MySQL for secure data storage and configured VPC
-                            networking for secure communication.</p>
-                        <div class="tech-stack">
-                            <span>AWS EC2</span><span>RDS</span><span>MySQL</span><span>Load
-                                Balancer</span><span>VPC</span>
+                    <div class="contact-detail-item">
+                        <div class="icon-box">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="detail-text">
+                            <span>Email</span>
+                            <p><a href="mailto:kalakotasaisai@gmail.com">kalakotasaisai@gmail.com</a></p>
                         </div>
                     </div>
-                    <div class="project-links">
-                        <a href="https://github.com/Saichandu786" target="_blank" class="github-link"><i
-                                class="fab fa-github"></i> View Source Code</a>
-                    </div>
                 </div>
 
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications" class="certifications section">
-            <div class="section-title">
-                <h2><span>Certifications</span></h2>
-            </div>
-            <div class="certs-grid">
-                <div class="cert-card fade-in">
-                    <i class="fas fa-certificate cert-icon"></i>
-                    <div class="cert-info">
-                        <h3>Oracle Associate Architect Certification <a
-                                href="https://drive.google.com/file/d/1r-XNTRXDzEU2M4Lh5h5hpW-pVQx42i7m/view"
-                                target="_blank" class="cert-link" title="View Credential">Cert-view 🔗</a></h3>
-                        <p>Oracle</p>
-                    </div>
-                </div>
-                <div class="cert-card fade-in">
-                    <i class="fas fa-award cert-icon"></i>
-                    <div class="cert-info">
-                        <h3>DevOps Professional Certification <a
-                                href="https://drive.google.com/file/d/1JW2gP_JPyAwiZiy1UNAlzT7hy_X2C7qq/view"
-                                target="_blank" class="cert-link" title="View Credential">Cert-view 🔗</a></h3>
-                        <p>Udemy</p>
-                    </div>
-                </div>
-                <div class="cert-card fade-in">
-                    <i class="fab fa-python cert-icon"></i>
-                    <div class="cert-info">
-                        <h3>Python Programming Certification <a
-                                href="https://drive.google.com/file/d/1JW2gP_JPyAwiZiy1UNAlzT7hy_X2C7qq/view"
-                                target="_blank" class="cert-link" title="View Credential">Cert-view🔗</a></h3>
-                        <p>Udemy</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Achievements Section -->
-        <section id="achievements" class="achievements section">
-            <div class="section-title">
-                <h2>My <span>Achievements</span></h2>
-            </div>
-            <div class="timeline">
-                <div class="timeline-item fade-in">
-                    <div class="timeline-icon"><i class="fas fa-code"></i></div>
-                    <div class="timeline-content">
-                        <h3>LeetCode Practice</h3>
-                        <p>Maintained consistent LeetCode practice demonstrating strong problem-solving skills and
-                            mastery
-                            over Data Structures & Algorithms.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-icon"><i class="fas fa-laptop-code"></i></div>
-                    <div class="timeline-content">
-                        <h3>Code of Duty Hackathon</h3>
-                        <p>Successfully participated in the Code of Duty Hackathon, collaborating with teammates to
-                            prototype novel software solutions under pressure.</p>
-                    </div>
-                </div>
-                <div class="timeline-item fade-in">
-                    <div class="timeline-icon"><i class="fas fa-crown"></i></div>
-                    <div class="timeline-content">
-                        <h3>Adobe Hackathon</h3>
-                        <p>Participated in the Adobe Hackathon, gaining valuable experience building enterprise-ready
-                            features and understanding real-time integration workflows.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-            <div class="section-title">
-                <h2>Get In <span>Touch</span></h2>
-            </div>
-            <div class="contact-container fade-in">
-                <div class="contact-info">
-                    <h3>Let's Connect!</h3>
-                    <p>I am actively seeking internship and full-time opportunities where I can leverage my Cloud
-                        architectures and DevOps automation skills. Have a question or proposal? Drop me a line!</p>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <a href="mailto:kalakotasaisai@gmail.com">kalakotasaisai@gmail.com</a>
-                    </div>
-                </div>
-
-                <div class="social-links-container">
-                    <a href="https://linkedin.com/in/saichandu258" target="_blank" class="social-card">
+                <div class="social-links-grid">
+                    <a href="https://linkedin.com/in/saichandu258" target="_blank" class="social-btn linkedin"
+                        title="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
-                        <span>LinkedIn Profile</span>
                     </a>
-                    <a href="https://github.com/Saichandu786" target="_blank" class="social-card">
+                    <a href="https://github.com/Saichandu786" target="_blank" class="social-btn github"
+                        title="GitHub">
                         <i class="fab fa-github"></i>
-                        <span>GitHub Profile</span>
+                    </a>
+                    <a href="https://wa.me/919032900350" target="_blank" class="social-btn whatsapp"
+                        title="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
             </div>
-        </section>
 
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2026 Kalakota Sai Chandu. All rights reserved.</p>
-        </footer>
+            <!-- Contact Form Card -->
+            <div class="contact-form-card">
+                <form id="contact-form">
+                    <div class="form-group">
+                        <label for="user_name">Name</label>
+                        <input type="text" id="user_name" name="user_name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user_email">Email</label>
+                        <input type="email" id="user_email" name="user_email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..."
+                            required></textarea>
+                    </div>
+                    <button type="submit" class="btn send-btn" id="submit-btn">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-        <script src="script.js"></script>
+    <!-- Success/Error Popup -->
+    <div id="form-popup" class="form-popup">
+        <div class="popup-content">
+            <div id="popup-icon" class="popup-icon"></div>
+            <h3 id="popup-title"></h3>
+            <p id="popup-message"></p>
+            <button id="close-popup" class="btn primary-btn">Close</button>
+        </div>
+    </div>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Kalakota Sai Chandu. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
